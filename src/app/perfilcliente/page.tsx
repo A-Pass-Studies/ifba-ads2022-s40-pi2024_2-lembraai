@@ -1,10 +1,10 @@
-
 import Image from "next/image";
 
 import React from "react"
 
 
 import styles from "./perfilcliente.module.css";
+
 
 import Link from "next/link";
 
@@ -58,7 +58,7 @@ export default function perfilcliente() {
                   />
                 </Link>
         
-                <Link href="/senha-cliente">
+                <Link href="/senhacliente">
                   <img
                     src="opcao2perfil-cliente.png"
                     alt="Alterar Senha"
@@ -68,7 +68,6 @@ export default function perfilcliente() {
                 </Link>
               </div>
         
-              {/* Rodapé */}
               <div className="rodape">
                 <Link href="/">
                   <img
