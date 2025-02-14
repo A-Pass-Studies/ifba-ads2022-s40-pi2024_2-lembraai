@@ -12,10 +12,10 @@ export default function HomePage() {
           <img src="arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
 
-        <div>
+        <div className="itenstopbar">
           <img src="bell-icon.svg" alt="Notificações" width={48} height={48} />
 
-          <Link href="/perfil-cliente">
+          <Link href="./perfilcliente">
             <img src="account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
           </Link>
         </div>

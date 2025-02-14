@@ -14,28 +14,29 @@ export default function perfilcliente() {
     return (
 
         
-            <div className="perfil-container">
-              <div className="top-bar">
-                <Link href="/">
+            <div className={styles.perfilcontainer}>
+              <div className={styles.topbar}>
+                <Link href="./telaprincipal">
                   <img
                     src="arrow-back-icon.svg"
                     alt="Voltar"
                     width={48}
                     height={48}
+                    className={styles.seta}
                   />
                 </Link>
               </div>
         
-              <div className="Main">
+              <div className={styles.Main}>
                 <h1>Perfil</h1>
         
-                <div className="container">
+                <div className={styles.container}>
                   <img
                     src="perfil-cliente.png"
                     alt="Foto de Perfil"
                     width={100}
                     height={100}
-                    className="fotoPerfil"
+                    className={styles.fotoperfil}
                   />
                   <img
                     src="mudar-foto-perfil.png"
@@ -45,49 +46,47 @@ export default function perfilcliente() {
                     className="mudarFoto"
                   />
                 </div>
+                  <div className={styles.texto}>
+                  <h2>Nome do usuário</h2>
+                  <h3>exemplo@gmail.com</h3>
+
+
+                  </div>
+                
         
-                <h2>Nome do usuário</h2>
-                <h3>exemplo@gmail.com</h3>
-        
-                <Link href="/detalhes-pessoais">
+                <Link href="./detalhespessoais">
                   <img
                     src="opcao1perfil-cliente.png"
                     alt="Detalhes Pessoais"
-                    width={200}
-                    height={50}
+                    className={styles.opçoes}
                   />
                 </Link>
         
-                <Link href="/senhacliente">
+                <Link href="./senhacliente">
                   <img
                     src="opcao2perfil-cliente.png"
                     alt="Alterar Senha"
-                    width={200}
-                    height={50}
+                    className={styles.opçoes}
+
                   />
                 </Link>
               </div>
         
-              <div className="rodape">
+              <div className={styles.rodape}>
                 <Link href="/">
                   <img
                     src="Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
-                    width={50}
-                    height={50}
+                    className={styles.imgrodape}
                   />
                 </Link>
                 <img
                   src="Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
-                  width={50}
-                  height={50}
                 />
                 <img
                   src="Rodape3perfil-cliente.png"
                   alt="Rodapé 3"
-                  width={50}
-                  height={50}
                 />
               </div>
             </div>

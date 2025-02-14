@@ -1,29 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  .container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 
-.Main {
-    text-align: center;
-    position: fixed;
-    }
-.rodapé {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f8fc; /* Cor de fundo suave */
+  }
+  
+  .topbar {
     width: 100%;
-    background-color: rgba(247, 249, 255, 1);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    }
-    .fotoPerfil{
-        position: relative;
-        text-align: center;
-        left: 46%;
-        transform: translate(-50%, 0%); 
-    }
-.mudarFoto{
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .fotoperfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
     position: relative;
-    transform: translate(-40%, -0%); 
-}
-    
+  }
+  
+  .texto {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .opçoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+  
+  .option img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  
+  .rodape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  

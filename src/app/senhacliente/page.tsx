@@ -12,7 +12,7 @@ export default function senhacliente() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (novaSenha === repetirSenha) {
-      window.location.href = '/PerfilCliente';
+      window.location.href = './perfilcliente';
     } else {
       alert('As senhas não coincidem!');
     }
@@ -66,7 +66,7 @@ export default function senhacliente() {
         </button>
 
         <button>
-          <a href="/PerfilCliente">
+          <a href="/Perfilcliente">
 
           <img
                     src="Cancelar.png"
