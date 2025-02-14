@@ -20,17 +20,17 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 18px;
 }
-.senha-atual{
+.senhaatual{
     width: 250px;
     height: 40px;
     background-color: rgba(224, 226, 232, 1);
 }
-.nova-senha{
+.novasenha{
     width: 250px;
     height: 40px;
     background-color: rgba(224, 226, 232, 1);
 }
-.repetir-senha{
+.repetirsenha{
     width: 250px;
     height: 40px;
     background-color: rgba(224, 226, 232, 1);

@@ -5,29 +5,31 @@ import React from "react";
 
 import styles from './detalhespessoais.module.css';
 
+
+
 function EditarDetalhesPessoais() {
     const handleSaveClick = () => {
-        window.location.href = 'PerfilCliente.html';
+        window.location.href = './perfilcliente';
     };
 
     return (
         <div className={styles.Main}>
-            <h1>EDITAR DETALHES PESSOAIS</h1>
+            <h1 className={styles.h1}>EDITAR DETALHES PESSOAIS</h1>
             <div className="alteracoes">
                 <input
                     type="text"
                     placeholder="Nome Completo"
-                    {styles.input-texto}
+                    className={styles.inputtexto}
                     required />
                 <input
                     type="email"
                     placeholder="E-mail"
-                    {styles.input-email}
+                    className={styles.inputemail}
                     required />
                 <input
                     type="datetime-local"
                     placeholder="Data de Nascimento"
-                    {styles.input-data}
+                    className={styles.inputdata}
                     required />
             </div>
 
@@ -38,12 +40,20 @@ function EditarDetalhesPessoais() {
 
             <div className={styles.botoes}>
                 <button type="button" onClick={handleSaveClick}>
-                    <img src="./resources/Salvar.png" alt="Salvar" className="botao" />
-                </button>
+                <img
+                    src="Salvar.png"
+                    alt="Alterar Senha"
+                    width={92}
+                    height={80}
+                  />                  </button>
                 <button type="button">
-                    <a href={styles.PerfilCliente.html}>
-                        <img src="./resources/Cancelar.png" alt="Cancelar" className="botao" />
-                    </a>
+                <a href="./perfilcliente">
+                <img
+                    src="Cancelar.png"
+                    alt="Alterar Senha"
+                    width={100}
+                    height={50}
+                  />                    </a>
                 </button>
             </div>
         </div>

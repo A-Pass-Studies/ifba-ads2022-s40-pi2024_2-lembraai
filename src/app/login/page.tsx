@@ -18,7 +18,7 @@ export default function Home() {
   
           <input type="password" placeholder="Senha" name="psw" required />
   
-          <button type="submit" onClick={() => (window.location.href = "index.html")}>
+          <button type="submit" onClick={() => (window.location.href = "./telaprincipal")}>
             Entrar
           </button>
           
