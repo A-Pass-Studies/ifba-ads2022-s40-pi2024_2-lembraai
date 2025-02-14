@@ -4,7 +4,7 @@ import React from "react"
 
 export default function Home() {
     return (
-        <div>
+        <div className="bodyLogin">
         <img
           src="lembraai-logo.png"
           alt="logo"
