@@ -1,28 +1,17 @@
-'use client';
+import db from '../../database/models';
 
-interface c {
-  email:string,
-  senha: string
-}
+export default async function Page() {
 
-export default function Page({ data }) {
+      const usuarios = await db.usuarios.findAll();
 
   return (
     <div>
-      <p>e-mail: {data} </p>
-      <p>senha: {JSON.parse(data)} </p>
+      {usuarios.map((u) => (
+        <div key={u.id}>
+          <p>e-mail: {u.email}</p>
+          <p>senha: {u.senha}</p>
+        </div>
+      ))}
     </div>
   )
-}
-
-// This gets called on every request
-export async function getData() {
-  
-  const data:c = {
-    email:"e@w.com",
-    senha: "1234"
-  }
-
-  // Pass data to the page via props
-  return { props: { data } }
 }

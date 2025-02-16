@@ -1,7 +1,14 @@
 class Usuario {
 
-    constructor(email:string, senha: string) {
-        
+    #email;
+    #senha;
+
+    constructor(email, senha) {
+        this.email = email;
+        this.senha = senha;
     }
 
+    get email() {
+        return this.#email;
+    }
 }
