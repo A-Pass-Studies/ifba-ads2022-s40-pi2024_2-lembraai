@@ -1,0 +1,13 @@
+insert
+	into
+	auth.usuarios
+(
+	email,
+	senha,
+	criado_em,
+	atualizado_em)
+values(
+'tester@test.com',
+'tester',
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP);
