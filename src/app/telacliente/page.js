@@ -2,7 +2,7 @@
 import React from "react";
 import "./style.css";
 
-const Estabelecimento: React.FC = () => {
+const Estabelecimento = () => {
   return (
     <div className="container">
       {/* Hero Section */}

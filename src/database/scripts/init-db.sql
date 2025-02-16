@@ -80,7 +80,7 @@ create table if not exists enderecos.logradouros (
 	id serial not null primary key,
 	bairro_id integer not null,
 	nome varchar(128) not null,
-	tipo tipo_logradouro not null,
+	tipo enderecos.tipo_logradouro not null,
 	cep char(8) not null,
 	constraint logradouros_bairro_nome_uq unique (bairro_id, nome),
 	constraint logradouros_cep_uq unique (cep),
