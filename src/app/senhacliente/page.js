@@ -1,6 +1,6 @@
 "use client"
   import React, { useState } from "react";
-import "./styles.css"; 
+import "./senhacliente.css"; 
 
 const AlterarSenha = () => {
   let [senhaAtual, setSenhaAtual] = useState("");
@@ -51,7 +51,7 @@ const AlterarSenha = () => {
           </button>
 
           <button>
-            <a href="/Perfilcliente">
+            <a href="/perfilcliente">
               <img src="Cancelar.png" alt="Cancelar" width={100} height={50} />
             </a>
           </button>

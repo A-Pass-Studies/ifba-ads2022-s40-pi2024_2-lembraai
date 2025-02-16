@@ -17,11 +17,11 @@ export default function Registrogeral() {
       <div id="registro">
         <p>Como você deseja se registrar?</p>
 
-        <Link href="/cadastro-cliente">
+        <Link href="./cadastrocliente">
           <img src="/registro-cliente.png" alt="Cadastro Cliente" />
         </Link>
 
-        <Link href="/cadastro-profissional">
+        <Link href="./cadastroprofissional">
           <img src="/registro-profissional.png" alt="Cadastro Profissional" />
         </Link>
       </div>
