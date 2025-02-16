@@ -22,7 +22,7 @@ export default function Home() {
             Entrar
           </button>
           
-          <a href="registro.html">Não é usuário? Cadastre-se</a>
+          <a href="./registrogeral">Não é usuário? Cadastre-se</a>
         </div>
       </div>
     )

@@ -73,21 +73,27 @@ export default function perfilcliente() {
               </div>
         
               <div className={styles.rodape}>
-                <Link href="/">
+                <Link href="./telaprincipal">
                   <img
                     src="Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
                     className={styles.imgrodape}
                   />
                 </Link>
+
+                <Link href="./carregarbusca">
                 <img
                   src="Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
                 />
+                </Link>
+
+                <Link href="./telaagendamento">
                 <img
                   src="Rodape3perfil-cliente.png"
                   alt="Rodapé 3"
                 />
+                </Link>                
               </div>
             </div>
           );

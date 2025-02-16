@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
 import "./carregarbusca.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,9 +22,19 @@ export default function Home() {
         ))}
       </div>
       <nav className="bottom-nav">
+
+      <Link href="./telaprincipal">
         <span>🏠 Início</span>
+        </Link>
+
+        <Link href="./carregarbusca">
         <span className="active">🔍 Procurar</span>
+        </Link>
+
+        <Link href="./telaagendamento">
         <span>📅 Agendas</span>
+        </Link>
+        
       </nav>
     </div>
   );
