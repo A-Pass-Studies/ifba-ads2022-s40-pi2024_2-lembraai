@@ -9,14 +9,15 @@ export default function senhacliente() {
   const [novaSenha, setNovaSenha] = useState('');
   const [repetirSenha, setRepetirSenha] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (novaSenha === repetirSenha) {
-      window.location.href = './perfilcliente';
+        window.location.href = "./perfilcliente";
     } else {
-      alert('As senhas não coincidem!');
+        alert("As senhas não coincidem!");
     }
 };
+
 
 
   return (
