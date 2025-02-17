@@ -2,7 +2,7 @@
 
 import React from "react"
 
-export default function Funcionario() {
+export default function CadastroTrabalhador() {
     return (
         "Tela funcionario"
 

@@ -3,7 +3,7 @@ import React from "react";
 import "./carregarbusca.css";
 import Link from "next/link";
 
-export default function Home() {
+export default function Caregarbusca() {
   return (
     <div className="container">
       <input type="text" placeholder="serviço ou estabelecimentos..." className="search-bar" />

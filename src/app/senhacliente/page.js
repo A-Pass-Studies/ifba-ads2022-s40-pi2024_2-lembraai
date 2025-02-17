@@ -1,29 +1,20 @@
-"use client"
-  import React, { useState } from "react";
+"use client";
+import React, { useState } from "react";
 import "./senhacliente.css"; 
 
 const AlterarSenha = () => {
-  let [senhaAtual, setSenhaAtual] = useState("");
-  let [novaSenha, setNovaSenha] = useState("");
-  let [repetirSenha, setRepetirSenha] = useState("");
-
-
-export default function senhacliente() {
-
-    const [senhaAtual, setSenhaAtual] = useState('');
-  const [novaSenha, setNovaSenha] = useState('');
-  const [repetirSenha, setRepetirSenha] = useState('');
+  const [senhaAtual, setSenhaAtual] = useState("");
+  const [novaSenha, setNovaSenha] = useState("");
+  const [repetirSenha, setRepetirSenha] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (novaSenha === repetirSenha) {
-        window.location.href = "./perfilcliente";
+      window.location.href = "./perfilcliente";
     } else {
-        alert("As senhas não coincidem!");
-
+      alert("As senhas não coincidem!");
     }
   };
-
 
   return (
     <div className="body">
@@ -45,6 +36,7 @@ export default function senhacliente() {
             value={novaSenha}
             onChange={(e) => setNovaSenha(e.target.value)}
           />
+
           <input
             type="password"
             placeholder="Repetir Nova Senha"
@@ -71,7 +63,3 @@ export default function senhacliente() {
 };
 
 export default AlterarSenha;
-
-    
-  
-
