@@ -6,20 +6,20 @@ export default function BuscaProfissional() {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 bg-gray-100">
+    <div className="">
       {/* Top Bar */}
-      <div className="w-full flex justify-start items-center py-2">
+      <div className="">
         <img src="arrow-back-icon.svg" alt="Voltar" width="24" height="24" />
       </div>
 
-      <h2 className="text-xl font-semibold mt-4">Cadastro Profissional</h2>
+      <h2 className="">Cadastro Profissional</h2>
 
       {/* Barra de Pesquisa */}
-      <div className="flex items-center border rounded-lg px-3 py-2 mt-4 bg-white shadow">
+      <div className="">
         <input
           type="text"
           name="pesquisaProfissional"
-          className="search-input outline-none px-2"
+          className=""
           placeholder="Pesquisa..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -38,16 +38,16 @@ export default function BuscaProfissional() {
       </div>
 
       {/* Card Profissional */}
-      <div className="card flex items-center bg-white p-4 mt-6 rounded-lg shadow-md w-full max-w-md">
+      <div className="">
         <div className="w-16 h-16">
-          <img src="fogarel.png" alt="Logo" className="w-full h-full object-cover rounded-md" />
+          <img src="fogarel.png" alt="Logo" className="" />
         </div>
         <div className="ml-4 flex-1">
-          <h3 className="text-lg font-semibold">Fogarel</h3>
-          <p className="text-sm text-gray-600">Presencial • $$ • 1.2 miles away</p>
-          <p className="text-sm text-blue-500">Entre para saber mais.</p>
+          <h3 className="">Fogarel</h3>
+          <p className="">Presencial • $$ • 1.2 miles away</p>
+          <p className="">Entre para saber mais.</p>
         </div>
-        <div className="rating text-yellow-500 text-xl">★★★</div>
+        <div className="">★★★</div>
       </div>
     </div>
   );

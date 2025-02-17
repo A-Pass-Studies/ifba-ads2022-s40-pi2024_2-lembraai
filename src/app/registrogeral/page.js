@@ -8,7 +8,7 @@ export default function Registrogeral() {
     <div>
       {/* Top Bar */}
       <div id="top-bar">
-        <Link href="/login">
+        <Link href="./auth">
           <img src="/arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
       </div>
