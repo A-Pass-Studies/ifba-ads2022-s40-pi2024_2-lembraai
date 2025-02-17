@@ -1,7 +1,7 @@
 'use strict';
 import { Model } from 'sequelize';
 export default (sequelize, DataTypes) => {
-  class Usuarios extends Model {
+  class HistoricoAgendamento extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,18 +11,16 @@ export default (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Usuarios.init({
-    email: DataTypes.STRING,
-    senha: DataTypes.STRING,
-    criado_em: DataTypes.DATE,
-    atualizado_em: DataTypes.DATE
+  HistoricoAgendamento.init({
+    agendamento_id: DataTypes.INTEGER,
+    status: DataTypes.STRING,
+    comentario: DataTypes.STRING,
+    data_hora: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'Usuarios',
-    schema: 'auth',
-    tableName: 'usuarios',
-    createdAt: 'criado_em',
-    updatedAt: 'atualizado_em'
+    modelName: 'HistoricoAgendamento',
+    schema: 'agendas',
+    tableName: 'historico_agendamento'
   });
-  return Usuarios;
+  return HistoricoAgendamento;
 };
