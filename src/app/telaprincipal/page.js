@@ -8,7 +8,7 @@ export default function HomePage() {
     <div>
       {/* Top Bar */}
       <div id="top-bar2">
-        <Link href="/login">
+        <Link href="./auth">
           <img src="arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
 
@@ -49,7 +49,30 @@ export default function HomePage() {
       </div>
 
       {/* Navbar */}
-      <div id="nav-bar"></div>
+      <div className="rodape">
+                <Link href="./telaprincipal">
+                  <img
+                    src="Rodape1perfil-cliente.png"
+                    alt="Rodapé 1"
+                    className="imgrodape"
+                  />
+                </Link>
+
+                <Link href="./carregarbusca">
+                <img
+                  src="Rodape2perfil-cliente.png"
+                  alt="Rodapé 2"
+                />
+                </Link>
+
+                <Link href="./telaagendamento">
+                <img
+                  src="Rodape3perfil-cliente.png"
+                  alt="Rodapé 3"
+                />
+                </Link>                
+              </div>      
+      
     </div>
   );
 }
