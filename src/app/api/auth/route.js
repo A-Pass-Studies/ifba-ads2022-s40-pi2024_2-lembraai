@@ -1,4 +1,4 @@
-import db from '../../../database/models';
+import models from '../../../database/models';
 import { StatusCodes, ReasonPhrases } from 'http-status-codes';
 import { ValidationError, FieldError } from '../../../exception/ValidationException';
 import { NextResponse } from 'next/server';
@@ -43,7 +43,7 @@ export async function POST(req) {
   try {
     const {email, senha} = validateData(await req.formData());
 
-    const user = await db.usuarios.findOne({
+    const user = await models.Usuarios.findOne({
       where: { email }
     });
 
