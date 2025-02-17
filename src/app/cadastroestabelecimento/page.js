@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const CadastroProfissional: React.FC = () => {
+const CadastroProfissional= () => {
   return (
     <div id="registroEstabelecimento">
       <div id="top-bar1">

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Funcionario() {
+export default function Cadastrocliente() {
   return (
     <div>
       {/* Top Bar */}

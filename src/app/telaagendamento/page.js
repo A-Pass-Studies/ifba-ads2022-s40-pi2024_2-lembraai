@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "./telaagendamento.css";
 
-const atividades: Record<number, string> = {
+const atividades = {
   1: "Corte e Barba",
   2: "Corte",
   4: "Corte e Barba",
@@ -16,8 +16,8 @@ const atividades: Record<number, string> = {
   14: "Corte e Barba",
 };
 
-const Agendamento: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<string>("");
+const Agendamento= () => {
+  const [selectedDate, setSelectedDate] = useState("");
 
   return (
     <div id="registroEstabelecimento">
