@@ -19,9 +19,7 @@ export default (sequelize, DataTypes) => {
     sequelize,
     modelName: 'ProfissionaisServicos',
     schema: 'servicos',
-    tableName: 'profissionais_servicos',
-    createdAt: 'criado_em',
-    updatedAt: 'atualizado_em'
+    tableName: 'profissionais_servicos'
   });
   return ProfissionaisServicos;
 };
