@@ -2,17 +2,12 @@
 import { Model, DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  class usuarios extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  class Usuario extends Model {
+
     static associate(models) {
-      // define association here
     }
   }
-  usuarios.init({
+  Usuario.init({
     id: {primaryKey: true, type: DataTypes.INTEGER},
     email: DataTypes.STRING,
     senha: DataTypes.STRING,
@@ -20,11 +15,12 @@ export default (sequelize) => {
     atualizado_em: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'usuarios',
+    modelName: 'Usuario',
+    tableName: 'usuarios',
     schema: 'auth',
     timestamps: true,
     createdAt: 'criado_em',
     updatedAt: 'atualizado_em'
   });
-  return usuarios;
+  return Usuario;
 };
