@@ -92,6 +92,16 @@ body#login{
   flex-direction: column;
 }
 
+.bodyLogin{
+  height: 800px;
+  width: 360px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .login-logo{
   margin-bottom: 10px;
 }
@@ -203,4 +213,15 @@ h2 {
 .itenstopbar{
   display: flex;
   align-items: center;
+}
+
+.rodape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }

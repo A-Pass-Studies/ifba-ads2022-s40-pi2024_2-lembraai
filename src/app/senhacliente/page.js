@@ -46,7 +46,7 @@ const AlterarSenha = () => {
           />
         </div>
 
-        <div className="botoes">
+        <div className="botões">
           <button type="submit" onClick={handleSubmit}>
             <img src="Salvar.png" alt="Alterar Senha" width={92} height={80} />
           </button>
