@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Link from 'next/link';
 
 const Estabelecimento = () => {
   return (
@@ -18,10 +19,8 @@ const Estabelecimento = () => {
         <p>
           Ao cadastrar um novo estabelecimento, você se tornará o administrador do estabelecimento e poderá aceitar novos associados
         </p>
-        <br />
-        <br />
         <div className="opcoes">
-          <button type="submit">Cadastre um estabelecimento</button>
+          <Link href="/ui/">Cadastre um estabelecimento</Link>
         </div>
       </div>
       <div className="caixaregistro">

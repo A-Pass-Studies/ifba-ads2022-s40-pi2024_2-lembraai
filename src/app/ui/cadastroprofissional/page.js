@@ -1,9 +1,30 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { Link } from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CadastroProfissional() {
+
+  const router = useRouter();
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+
+    const fdata = new FormData(e.target);
+
+    const dados = {      
+    }
+
+    fdata.forEach((value, key)=> {
+      dados[key] = value;
+    });
+
+    localStorage.setItem('cadastro-profissional', JSON.stringify(dados));
+
+    router.push('/ui/registroestabelecimento');
+  }
+
   return (
     <div>
       {/* Top Bar */}
@@ -30,19 +51,21 @@ export default function CadastroProfissional() {
 
       {/* Formulário */}
       <div className="form-container">
-        <form>
+        <form action="/ui/cadastro-profissional" onSubmit={handlerSubmit}>
           <input className="input" type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
           <br />
 
-          <input className="input" type="date" id="data" name="data" placeholder="Digite sua data de nascimento" required />
+          <input className="input" type="text" id="cpf" name="cpf" placeholder="CPF" required="required"/>
+
+          <input className="input" type="date" id="data" name="nascimento" placeholder="Digite sua data de nascimento" required />
           <br />
 
           {/* Gênero */}
           <div className="genero">
-            <input type="radio" id="masculino" name="genero" value="Masculino" required />
+            <input type="radio" id="masculino" name="sexo" value="M" required />
             <label htmlFor="masculino" className="btn">Masculino</label>
 
-            <input type="radio" id="feminino" name="genero" value="Feminino" />
+            <input type="radio" id="feminino" name="sexo" value="F" />
             <label htmlFor="feminino" className="btn">Feminino</label>
           </div>
           <br />

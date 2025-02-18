@@ -16,7 +16,6 @@ body#registroEstabelecimento {
 
 .caixaregistro {
     width: 328px;
-    height: 265px;
     margin: 10px auto;
     padding: 20px;
     background-color: #cacdcf;
@@ -24,11 +23,10 @@ body#registroEstabelecimento {
     border-radius: 40px;
 }
 
-.opcoes button {
-    display: block;
+.opcoes a {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
     border: none;
     border-radius: 15px;
     background-color: #007bff;
