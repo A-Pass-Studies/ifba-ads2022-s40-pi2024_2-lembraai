@@ -73,16 +73,27 @@ body {
 .imgseta{
   margin: 10px;
 }
+
 #top-bar2 {
   display: flex;
   color: #E0E2E8;
   background-color: #E0E2E8;
+  padding: 10px;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-
 body#login{
+  height: 800px;
+  width: 360px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bodyLogin{
   height: 800px;
   width: 360px;
   margin: 0;
@@ -203,4 +214,97 @@ h2 {
 .itenstopbar{
   display: flex;
   align-items: center;
+}
+
+.rodape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 20;
+width: fit-content;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch input:checked + label {
+  background-color: #4da6ff;
+  color: white;
+}
+
+.toggle-switch input + label:first-of-type {
+  border-right: 1px solid #ccc;
+}
+
+.business-listing {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.business-listing .icon {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.business-listing .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.business-listing .details {
+  flex: 1;
+}
+
+.business-listing .details h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.business-listing .details p {
+  font-size: 14px;
+  color: gray;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.rating .star {
+  font-size: 18px;
+  color: #ffc107;
 }

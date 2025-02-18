@@ -1,20 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function HomePage() {
+  const [toggle, setToggle] = useState("todos");
+
+  const handleToggleChange = (event) => {
+    setToggle(event.target.id);
+  };
+
   return (
     <div>
       {/* Top Bar */}
       <div id="top-bar2">
-        <Link href="/login">
+        <Link href="./auth">
           <img src="arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
 
         <div className="itenstopbar">
           <img src="bell-icon.svg" alt="Notificações" width={48} height={48} />
-
           <Link href="./perfilcliente">
             <img src="account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
           </Link>
@@ -24,9 +29,8 @@ export default function HomePage() {
       {/* Conteúdo Principal */}
       <div id="index-content">
         {/* Carrossel */}
-        <div className="carrousel">
+        <div className="carousel">
           <img src="masculino.png" alt="Estilo Masculino" />
-          <img src="feminino.png" alt="Estilo Feminino" />
         </div>
 
         {/* Mais Populares */}
@@ -37,19 +41,48 @@ export default function HomePage() {
 
         {/* Lojas */}
         <div className="lojas">
-          {/* <div className="botoes">
-            <button>Todos</button>
-            <button>Populares</button>
-          </div> */}
-          <div className="loja">
-            <img src="fogarel.png" alt="Fogarel" />
-            <Link href="/">Fogarel</Link>
-          </div>
+            <div className="toggle-switch">
+              <input type="radio" id="todos" name="toggle" checked={toggle === "todos"} onChange={handleToggleChange} />
+              <label htmlFor="todos">Todos</label>
+              <input type="radio" id="favoritos" name="toggle" checked={toggle === "favoritos"} onChange={handleToggleChange} />
+              <label htmlFor="favoritos">Favoritos</label>
+            </div>
+
+         <div className="lojas">
+            <Link href="/telacliente" className="business-listing">
+              <div className="icon">
+                <img src="fogarel.png" alt="Fogarel Icon" />
+              </div>
+              <div className="details">
+                <h3>Fogarel</h3>
+                <p>Avenida Europa, 450, Dinah Borges, Eunápolis-BA</p>
+                <div className="rating">
+                  <span className="star">&#9733;</span>
+                  <span className="star">&#9733;</span>
+                  <span className="star">&#9733;</span>
+                </div>
+              </div>
+            </Link>
+            </div>; 
         </div>
       </div>
 
       {/* Navbar */}
-      <div id="nav-bar"></div>
+      <div className="rodape">
+        <Link href="./telaprincipal">
+          <img
+            src="Rodape1perfil-cliente.png"
+            alt="Rodapé 1"
+            className="imgrodape"
+          />
+        </Link>
+        <Link href="./carregarbusca">
+          <img src="Rodape2perfil-cliente.png" alt="Rodapé 2" />
+        </Link>
+        <Link href="./telaagendamento">
+          <img src="Rodape3perfil-cliente.png" alt="Rodapé 3" />
+        </Link>
+      </div>      
     </div>
   );
 }
