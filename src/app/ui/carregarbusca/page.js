@@ -23,15 +23,15 @@ export default function Caregarbusca() {
       </div>
       <nav className="bottom-nav">
 
-      <Link href="./telaprincipal">
+      <Link href="/ui/telaprincipal">
         <span>🏠 Início</span>
         </Link>
 
-        <Link href="./carregarbusca">
+        <Link href="/ui/carregarbusca">
         <span className="active">🔍 Procurar</span>
         </Link>
 
-        <Link href="./telaagendamento">
+        <Link href="/ui/telaagendamento">
         <span>📅 Agendas</span>
         </Link>
         

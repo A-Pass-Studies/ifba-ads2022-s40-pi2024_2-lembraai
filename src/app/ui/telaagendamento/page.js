@@ -23,7 +23,7 @@ const Agendamento= () => {
     <div id="registroEstabelecimento">
       {/* Seta para voltar */}
       <div className="imgseta">
-        <a href="./telaprincipal">
+        <a href="/ui/telaprincipal">
           <img src="/arrow-back-icon.svg" alt="Voltar" width="24" height="24" />
         </a>
       </div>

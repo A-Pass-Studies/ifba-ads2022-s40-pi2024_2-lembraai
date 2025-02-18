@@ -16,7 +16,7 @@ export default function perfilcliente() {
         
             <div className={styles.perfilcontainer}>
               <div className={styles.topbar}>
-                <Link href="./telaprincipal">
+                <Link href="/ui/telaprincipal">
                   <img
                     src="/arrow-back-icon.svg"
                     alt="Voltar"
@@ -54,7 +54,7 @@ export default function perfilcliente() {
                   </div>
                 
         
-                <Link href="./detalhespessoais">
+                <Link href="/ui/detalhespessoais">
                   <img
                     src="/opcao1perfil-cliente.png"
                     alt="Detalhes Pessoais"
@@ -62,7 +62,7 @@ export default function perfilcliente() {
                   />
                 </Link>
         
-                <Link href="./senhacliente">
+                <Link href="/ui/senhacliente">
                   <img
                     src="/opcao2perfil-cliente.png"
                     alt="Alterar Senha"
@@ -73,7 +73,7 @@ export default function perfilcliente() {
               </div>
         
               <div className={styles.rodape}>
-                <Link href="./telaprincipal">
+                <Link href="/ui/telaprincipal">
                   <img
                     src="/Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
@@ -81,14 +81,14 @@ export default function perfilcliente() {
                   />
                 </Link>
 
-                <Link href="./carregarbusca">
+                <Link href="/ui/carregarbusca">
                 <img
                   src="/Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
                 />
                 </Link>
 
-                <Link href="./telaagendamento">
+                <Link href="/ui/telaagendamento">
                 <img
                   src="/Rodape3perfil-cliente.png"
                   alt="Rodapé 3"

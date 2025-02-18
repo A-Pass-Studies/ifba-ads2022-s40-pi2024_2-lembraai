@@ -46,7 +46,7 @@ function EditarDetalhesPessoais() {
                     height={80}
                   />                  </button>
                 <button type="button">
-                <a href="./perfilcliente">
+                <a href="/ui/perfilcliente">
                 <img
                     src="/Cancelar.png"
                     alt="Alterar Senha"

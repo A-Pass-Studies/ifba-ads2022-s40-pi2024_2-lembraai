@@ -3,8 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import Form from 'next/form'
+import { useRouter } from "next/navigation";
 
 export default function Cadastrocliente() {
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +33,7 @@ export default function Cadastrocliente() {
       {/* Top Bar */}
       <div id="top-bar1">
         <div className="imgseta">
-          <Link href="./registrogeral">
+          <Link href="/ui/registrogeral">
             <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width={24} height={24} />
           </Link>
         </div>

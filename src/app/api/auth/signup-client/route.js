@@ -3,7 +3,9 @@ import { models, sequelize } from '../../../../database/models';
 import PasswordCrypt from '@/helpers/PasswordCrypt';
 import {StatusCodes} from 'http-status-codes';
 import process from 'process';
-import * as jose from 'jose';
+import {SignJWT} from 'jose';
+
+const TOKEN_SECRET = process.TOKEN_SECRET;
 
 /**
  * 
@@ -47,9 +49,13 @@ export async function POST(request) {
         const pessoa = await models.Pessoas.create(data.pessoa, { transaction });
         await transaction.commit();
 
-        const token = await jwt.sign({user: usuario.email}, process.env.TOKEN_SECRET, { expiresIn: "1d" });
+        const token = await new SignJWT({user: usuario.email})
+        .setProtectedHeader({ alg: 'HS256' })
+        .setIssuedAt()
+        .setExpirationTime('1d')
+        .sign(new TextEncoder().encode(TOKEN_SECRET));
 
-        return Response(token, {
+        return new Response(token, {
             status: StatusCodes.CREATED,
             headers: {
                 'Location': `/api/pessoas/${pessoa.id}`

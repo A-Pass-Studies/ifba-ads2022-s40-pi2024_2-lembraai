@@ -8,7 +8,7 @@ export default function Registrogeral() {
     <div>
       {/* Top Bar */}
       <div id="top-bar">
-        <Link href="./auth">
+        <Link href="/ui/auth">
           <img src="/arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
       </div>
@@ -17,11 +17,11 @@ export default function Registrogeral() {
       <div id="registro">
         <p>Como você deseja se registrar?</p>
 
-        <Link href="./cadastrocliente">
+        <Link href="/ui/cadastrocliente">
           <img src="/registro-cliente.png" alt="Cadastro Cliente" />
         </Link>
 
-        <Link href="./cadastroprofissional">
+        <Link href="/ui/cadastroprofissional">
           <img src="/registro-profissional.png" alt="Cadastro Profissional" />
         </Link>
       </div>

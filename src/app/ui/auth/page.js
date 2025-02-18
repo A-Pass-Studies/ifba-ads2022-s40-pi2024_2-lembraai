@@ -49,8 +49,8 @@ export default function AuthPage() {
           Entrar
         </button>
 
-        <Link href="/registrogeral">Não é usuário? Cadastre-se</Link>
-        <Link href="/auth/recovery">Esqueceu sua senha, recupere aqui...</Link>
+        <Link href="/ui/registrogeral">Não é usuário? Cadastre-se</Link>
+        <Link href="/ui/auth/recovery">Esqueceu sua senha, recupere aqui...</Link>
       </form>
     </div>
   )

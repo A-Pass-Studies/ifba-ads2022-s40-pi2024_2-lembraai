@@ -9,7 +9,7 @@ export default function CadastroProfissional() {
       {/* Top Bar */}
       <div id="top-bar1">
         <div className="imgseta">
-          <Link href="./registrogeral">
+          <Link href="/ui/registrogeral">
             <img src="/arrow-back-icon.svg" alt="Voltar" width={24} height={24} />
           </Link>
         </div>

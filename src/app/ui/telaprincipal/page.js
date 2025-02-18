@@ -8,14 +8,14 @@ export default function HomePage() {
     <div>
       {/* Top Bar */}
       <div id="top-bar2">
-        <Link href="./auth">
+        <Link href="/ui/auth">
           <img src="/arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
 
         <div className="itenstopbar">
           <img src="/bell-icon.svg" alt="Notificações" width={48} height={48} />
 
-          <Link href="./perfilcliente">
+          <Link href="/ui/perfilcliente">
             <img src="/account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function HomePage() {
 
       {/* Navbar */}
       <div className="rodape">
-                <Link href="./telaprincipal">
+                <Link href="/ui/telaprincipal">
                   <img
                     src="/Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
@@ -58,14 +58,14 @@ export default function HomePage() {
                   />
                 </Link>
 
-                <Link href="./carregarbusca">
+                <Link href="/ui/carregarbusca">
                 <img
                   src="/Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
                 />
                 </Link>
 
-                <Link href="./telaagendamento">
+                <Link href="/ui/telaagendamento">
                 <img
                   src="/Rodape3perfil-cliente.png"
                   alt="Rodapé 3"
