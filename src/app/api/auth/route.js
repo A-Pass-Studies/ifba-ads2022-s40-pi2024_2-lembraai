@@ -3,6 +3,10 @@ import { StatusCodes, ReasonPhrases } from 'http-status-codes';
 import { ValidationError, FieldError } from '../../../exception/ValidationException';
 import { NextResponse } from 'next/server';
 import PasswordCrypt from '@/helpers/PasswordCrypt';
+import {SignJWT} from 'jose';
+import process from 'process';
+
+const TOKEN_SECRET = process.env.TOKEN_SECRET
 
 function createUnautorizedResponse() {
   return new Response(ReasonPhrases.UNAUTHORIZED, {
@@ -56,11 +60,13 @@ export async function POST(req) {
       return createUnautorizedResponse();
     }
 
-    return NextResponse.json({
-      email: user.email, 
-      criado_em: user.criado_em, 
-      atualizado_em: user.atualizado_em
-    }, {
+    const token = await new SignJWT({user: user.email})
+      .setProtectedHeader({ alg: 'HS256' })
+      .setIssuedAt()
+      .setExpirationTime('1d')
+      .sign(new TextEncoder().encode(TOKEN_SECRET));
+
+    return new Response(token, {
       status: StatusCodes.OK
     });
 
@@ -69,10 +75,6 @@ export async function POST(req) {
       return NextResponse.json(validationsError, {
         status: StatusCodes.BAD_REQUEST
       })
-    //} else if (error instanceof Error) {
-    //   return NextResponse.json(error, {
-    //     status: StatusCodes.INTERNAL_SERVER_ERROR
-    //   });
     } else {
       throw error;
     }

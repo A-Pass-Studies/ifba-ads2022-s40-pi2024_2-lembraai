@@ -17,20 +17,22 @@ import _HistoricoAgendamento from './historicoagendamento';
 
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
+const Usuarios = _Usuarios(sequelize, DataTypes);
+const Cidades = _Cidades(sequelize, DataTypes);
+const Bairros = _Bairros(sequelize, DataTypes);
+const Logradouros = _Logradouros(sequelize, DataTypes);
+const Enderecos = _Enderecos(sequelize, DataTypes);
+const Pessoas = _Pessoas(sequelize, DataTypes, Enderecos);
+const PessoasJuridicas = _PessoasJuridicas(sequelize, DataTypes);
+const Estabelecimentos = _Estabelecimentos(sequelize, DataTypes);
+const ProfissionaisEstabelecimentos = _ProfissionaisEstabelecimentos(sequelize, DataTypes);
+const Servicos = _Servicos(sequelize, DataTypes);
+const ProfissionaisServicos = _ProfissionaisServicos(sequelize, DataTypes);
+const Agendamentos = _Agendamentos(sequelize, DataTypes);
+const HistoricoAgendamento = _HistoricoAgendamento(sequelize, DataTypes);
+
 const models = {
-  Usuarios: _Usuarios(sequelize, DataTypes),
-  Cidades: _Cidades(sequelize, DataTypes),
-  Bairros: _Bairros(sequelize, DataTypes),
-  Logradouros: _Logradouros(sequelize, DataTypes),
-  Enderecos: _Enderecos(sequelize, DataTypes),
-  Pessoas: _Pessoas(sequelize, DataTypes),
-  PessoasJuridicas: _PessoasJuridicas(sequelize, DataTypes),
-  Estabelecimentos: _Estabelecimentos(sequelize, DataTypes),
-  ProfissionaisEstabelecimentos: _ProfissionaisEstabelecimentos(sequelize, DataTypes),
-  Servicos: _Servicos(sequelize, DataTypes),
-  ProfissionaisServicos: _ProfissionaisServicos(sequelize, DataTypes),
-  Agendamentos: _Agendamentos(sequelize, DataTypes),
-  HistoricoAgendamento: _HistoricoAgendamento(sequelize, DataTypes),
+  Usuarios, Cidades, Cidades, Bairros, Logradouros, Enderecos, Pessoas, PessoasJuridicas, Estabelecimentos, ProfissionaisEstabelecimentos, Servicos, ProfissionaisServicos, Agendamentos, HistoricoAgendamento
 };
 
 Object.keys(models).forEach(modelName => {

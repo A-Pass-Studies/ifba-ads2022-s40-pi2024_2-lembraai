@@ -8,6 +8,6 @@ insert
 	atualizado_em)
 values(
 'tester@test.com',
-'tester',
+'$2y$10$WyA1LR9CyTyF9pcVOVeza.KiYcHgPLPztU.xX4loTF2faTYBcDDSC', -- senha
 CURRENT_TIMESTAMP,
 CURRENT_TIMESTAMP);

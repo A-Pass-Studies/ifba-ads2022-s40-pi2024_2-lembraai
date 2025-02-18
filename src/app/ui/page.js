@@ -2,8 +2,30 @@
 
 import React from "react";
 import Link from "next/link";
+import Form from 'next/form'
 
 export default function Cadastrocliente() {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target); 
+
+    var object = {};
+    const res = await fetch(e.target.action, {
+      method: e.target.method.toUpperCase(),
+      body: formData,
+    });
+
+    if (res.ok) {
+      document.cookie = `auth-token=Bearer ${await res.text()}`;
+
+      router.push('/ui/telaprincipal');
+    } else {
+      alert('Falha no cadastro!');
+    }
+  };
+
   return (
     <div>
       {/* Top Bar */}
@@ -31,18 +53,20 @@ export default function Cadastrocliente() {
 
         {/* Formulário */}
         <div className="form-container">
-          <form>
+          <form onSubmit={handleSubmit} method="POST" action="/api/auth/signup-client" encType="application/json">
             <input className="input" type="text" id="nome" name="nome" placeholder="Digite seu nome" required /><br />
 
-            <input className="input" type="date" id="data" name="data" required /><br />
+            <input className="input" type="text" id="cpf" name="cpf" placeholder="CPF" required="required"/>
+
+            <input className="input" type="date" id="data" name="data_nascimento" required /><br />
 
             {/* Gênero */}
             <div>
               <div className="genero">
-                <input type="radio" id="masculino" name="genero" value="Masculino" />
+                <input type="radio" id="masculino" name="sexo" value="M" />
                 <label htmlFor="masculino" className="btn">Masculino</label>
 
-                <input type="radio" id="feminino" name="genero" value="Feminino" />
+                <input type="radio" id="feminino" name="sexo" value="F" />
                 <label htmlFor="feminino" className="btn">Feminino</label>
               </div>
             </div><br />

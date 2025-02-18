@@ -108,14 +108,14 @@ create table if not exists dadoscadastrais.pessoas (
 	cpf char(11) not null,
 	sexo dadoscadastrais.sexo not null,
 	nascimento date not null,
-	celular varchar(14) not null,
-	pessoa_endereco_id bigint not null,
+	celular varchar(14) null,
+	endereco_id bigint null default null,
 	criado_em timestamp not null default current_timestamp,
 	atualizado_em timestamp not null default current_timestamp,
 	
 	constraint pessoas_cpf_uq unique (cpf),
 	constraint pessoas_usuario_fk foreign key (id) references auth.usuarios(id),
-	constraint pessoas_endereco_fk foreign key (id) references dadoscadastrais.enderecos(id)
+	constraint pessoas_endereco_fk foreign key (endereco_id) references dadoscadastrais.enderecos(id)
 );
 
 create trigger on_update_dadoscadastrais_pessoas_current_timestamp before

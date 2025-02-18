@@ -9,7 +9,7 @@ export default class PasswordCrypt {
      * @returns {string}
      */
     static encrypt(password) {
-        return bcryptjs.hashSync(process.env.SECRET, bcryptjs.genSaltSync(10))
+        return bcryptjs.hashSync(password, bcryptjs.genSaltSync(10))
     }
 
     /**
