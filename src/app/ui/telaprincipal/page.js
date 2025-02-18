@@ -9,14 +9,14 @@ export default function HomePage() {
       {/* Top Bar */}
       <div id="top-bar2">
         <Link href="./auth">
-          <img src="arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
+          <img src="/arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
         </Link>
 
         <div className="itenstopbar">
-          <img src="bell-icon.svg" alt="Notificações" width={48} height={48} />
+          <img src="/bell-icon.svg" alt="Notificações" width={48} height={48} />
 
           <Link href="./perfilcliente">
-            <img src="account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
+            <img src="/account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
           </Link>
         </div>
       </div>
@@ -25,14 +25,14 @@ export default function HomePage() {
       <div id="index-content">
         {/* Carrossel */}
         <div className="carrousel">
-          <img src="masculino.png" alt="Estilo Masculino" />
-          <img src="feminino.png" alt="Estilo Feminino" />
+          <img src="/masculino.png" alt="Estilo Masculino" />
+          <img src="/feminino.png" alt="Estilo Feminino" />
         </div>
 
         {/* Mais Populares */}
         <div id="populares">
           <p>Mais populares</p>
-          <img src="https://placehold.co/316x205" alt="Imagem de exemplo" />
+          <img src="/https://placehold.co/316x205" alt="Imagem de exemplo" />
         </div>
 
         {/* Lojas */}
@@ -42,7 +42,7 @@ export default function HomePage() {
             <button>Populares</button>
           </div> */}
           <div className="loja">
-            <img src="fogarel.png" alt="Fogarel" />
+            <img src="/fogarel.png" alt="Fogarel" />
             <Link href="/">Fogarel</Link>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function HomePage() {
       <div className="rodape">
                 <Link href="./telaprincipal">
                   <img
-                    src="Rodape1perfil-cliente.png"
+                    src="/Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
                     className="imgrodape"
                   />
@@ -60,14 +60,14 @@ export default function HomePage() {
 
                 <Link href="./carregarbusca">
                 <img
-                  src="Rodape2perfil-cliente.png"
+                  src="/Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
                 />
                 </Link>
 
                 <Link href="./telaagendamento">
                 <img
-                  src="Rodape3perfil-cliente.png"
+                  src="/Rodape3perfil-cliente.png"
                   alt="Rodapé 3"
                 />
                 </Link>                

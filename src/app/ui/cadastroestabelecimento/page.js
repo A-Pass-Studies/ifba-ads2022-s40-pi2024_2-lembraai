@@ -7,13 +7,13 @@ const CadastroProfissional= () => {
       <div id="top-bar1">
         <div className="imgseta">
           <a href="./login.html">
-            <img src="arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
+            <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
           </a>
         </div>
         <div className="container">
           <h1>Cadastro Estabelecimento</h1>
           <div className="logo-upload">
-            <img src="image (1).png" alt="Logomarca" />
+            <img src="/image (1).png" alt="Logomarca" />
             <button>Upload</button>
           </div>
           <div className="form-group">

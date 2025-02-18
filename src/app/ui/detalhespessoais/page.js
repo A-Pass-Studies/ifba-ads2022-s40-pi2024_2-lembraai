@@ -40,7 +40,7 @@ function EditarDetalhesPessoais() {
             <div className={styles.botoes}>
                 <button type="button" onClick={handleSaveClick}>
                 <img
-                    src="Salvar.png"
+                    src="/Salvar.png"
                     alt="Alterar Senha"
                     width={92}
                     height={80}
@@ -48,7 +48,7 @@ function EditarDetalhesPessoais() {
                 <button type="button">
                 <a href="./perfilcliente">
                 <img
-                    src="Cancelar.png"
+                    src="/Cancelar.png"
                     alt="Alterar Senha"
                     width={100}
                     height={50}

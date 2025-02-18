@@ -18,7 +18,7 @@ export default function perfilcliente() {
               <div className={styles.topbar}>
                 <Link href="./telaprincipal">
                   <img
-                    src="arrow-back-icon.svg"
+                    src="/arrow-back-icon.svg"
                     alt="Voltar"
                     width={48}
                     height={48}
@@ -32,14 +32,14 @@ export default function perfilcliente() {
         
                 <div className={styles.container}>
                   <img
-                    src="perfil-cliente.png"
+                    src="/perfil-cliente.png"
                     alt="Foto de Perfil"
                     width={100}
                     height={100}
                     className={styles.fotoperfil}
                   />
                   <img
-                    src="mudar-foto-perfil.png"
+                    src="/mudar-foto-perfil.png"
                     alt="Mudar Foto"
                     width={30}
                     height={30}
@@ -56,7 +56,7 @@ export default function perfilcliente() {
         
                 <Link href="./detalhespessoais">
                   <img
-                    src="opcao1perfil-cliente.png"
+                    src="/opcao1perfil-cliente.png"
                     alt="Detalhes Pessoais"
                     className={styles.opçoes}
                   />
@@ -64,7 +64,7 @@ export default function perfilcliente() {
         
                 <Link href="./senhacliente">
                   <img
-                    src="opcao2perfil-cliente.png"
+                    src="/opcao2perfil-cliente.png"
                     alt="Alterar Senha"
                     className={styles.opçoes}
 
@@ -75,7 +75,7 @@ export default function perfilcliente() {
               <div className={styles.rodape}>
                 <Link href="./telaprincipal">
                   <img
-                    src="Rodape1perfil-cliente.png"
+                    src="/Rodape1perfil-cliente.png"
                     alt="Rodapé 1"
                     className={styles.imgrodape}
                   />
@@ -83,14 +83,14 @@ export default function perfilcliente() {
 
                 <Link href="./carregarbusca">
                 <img
-                  src="Rodape2perfil-cliente.png"
+                  src="/Rodape2perfil-cliente.png"
                   alt="Rodapé 2"
                 />
                 </Link>
 
                 <Link href="./telaagendamento">
                 <img
-                  src="Rodape3perfil-cliente.png"
+                  src="/Rodape3perfil-cliente.png"
                   alt="Rodapé 3"
                 />
                 </Link>                

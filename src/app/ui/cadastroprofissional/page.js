@@ -10,7 +10,7 @@ export default function CadastroProfissional() {
       <div id="top-bar1">
         <div className="imgseta">
           <Link href="./registrogeral">
-            <img src="arrow-back-icon.svg" alt="Voltar" width={24} height={24} />
+            <img src="/arrow-back-icon.svg" alt="Voltar" width={24} height={24} />
           </Link>
         </div>
       </div>
@@ -19,7 +19,7 @@ export default function CadastroProfissional() {
       <h2>Cadastro Profissional</h2>
 
       <div className="imgcadastro">
-        <img src="ic_profissional 1.png" alt="Ícone Profissional" />
+        <img src="/ic_profissional 1.png" alt="Ícone Profissional" />
       </div>
 
       {/* Botões de Login */}

@@ -13,14 +13,14 @@ export default function Buscar() {
   return (
     <><div id="top-bar2">
           <Link href="./telaprincipal">
-              <img src="arrow-back-icon.svg" alt="Voltar para tela principal" width={48} height={48} />
+              <img src="/arrow-back-icon.svg" alt="Voltar para tela principal" width={48} height={48} />
           </Link>
 
           <div className="itenstopbar">
-              <img src="bell-icon.svg" alt="Notificações" width={48} height={48} />
+              <img src="/bell-icon.svg" alt="Notificações" width={48} height={48} />
 
               <Link href="./perfilcliente">
-                  <img src="account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
+                  <img src="/account-circle.svg" alt="Perfil do Cliente" width={48} height={48} />
               </Link>
           </div>
       </div><div className="container">

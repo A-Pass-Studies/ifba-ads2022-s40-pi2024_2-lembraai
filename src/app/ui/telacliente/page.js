@@ -35,7 +35,7 @@ const Estabelecimento = () => {
         {/* Description */}
         <div className="description">
           <div className="logo">
-            <img src="https://placehold.co/100x100" alt="Logo Fogarel" />
+            <img src="/https://placehold.co/100x100" alt="Logo Fogarel" />
           </div>
           <p>
             A Barbearia Fogarel é o destino certo para o homem moderno,

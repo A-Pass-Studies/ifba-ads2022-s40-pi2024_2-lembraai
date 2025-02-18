@@ -42,7 +42,7 @@ export default function Cadastrocliente() {
         <h2>Cadastro Cliente</h2>
 
         <div className="imgcadastro">
-          <img src="ic_cliente 1.png" alt="Ícone Cliente" />
+          <img src="/ic_cliente 1.png" alt="Ícone Cliente" />
         </div>
 
         {/* Botões de login */}
