@@ -1,30 +1,35 @@
 'use strict';
-import { Model, DataTypes } from 'sequelize'
-
-export default (sequelize) => {
-  class usuarios extends Model {
+import { Model, DataType } from 'sequelize';
+export default (sequelize, DataTypes) => {
+  class Usuarios extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Usuarios.hasOne(models.Pessoas, {
+        foreignKey: 'id'
+      })
     }
   }
-  usuarios.init({
-    id: {primaryKey: true, type: DataTypes.INTEGER},
+  Usuarios.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     email: DataTypes.STRING,
     senha: DataTypes.STRING,
-    criado_em: DataTypes.STRING,
-    atualizado_em: DataTypes.STRING
+    criado_em: DataTypes.DATE,
+    atualizado_em: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'usuarios',
+    modelName: 'Usuarios',
     schema: 'auth',
-    timestamps: true,
+    tableName: 'usuarios',
     createdAt: 'criado_em',
     updatedAt: 'atualizado_em'
   });
-  return usuarios;
+  return Usuarios;
 };
