@@ -9,9 +9,12 @@ body#cadastroEstabeleci {
 
 #top-bar1 {
     display: flex;
-    color: #E0E2E8;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+form {
+    padding: 0;
 }
 
 .container {
@@ -19,8 +22,7 @@ body#cadastroEstabeleci {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 20px auto;
+    width: 100%;
 }
 
 .container h1 {

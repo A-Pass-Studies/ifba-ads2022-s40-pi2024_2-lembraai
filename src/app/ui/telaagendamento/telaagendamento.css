@@ -8,7 +8,6 @@ body#registroEstabelecimento {
 }
 #top-bar1 {
     display: flex;
-    color: #E0E2E8;
     justify-content: space-between;
     margin-bottom: 10px;
 }

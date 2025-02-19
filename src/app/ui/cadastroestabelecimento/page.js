@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.css';
+import { TextField } from '@mui/material';
 
-const CadastroProfissional= () => {
+const CadastroProfissional = () => {
   return (
     <div id="registroEstabelecimento">
       <div id="top-bar1">
@@ -10,6 +11,8 @@ const CadastroProfissional= () => {
             <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
           </a>
         </div>
+      </div>
+      <from>
         <div className="container">
           <h1>Cadastro Estabelecimento</h1>
           <div className="logo-upload">
@@ -20,10 +23,8 @@ const CadastroProfissional= () => {
             <label htmlFor="nome-fantasia">Nome Fantasia</label>
             <input type="text" id="nome-fantasia" name="nome-fantasia" />
           </div>
-          <div className="form-group">
-            <label htmlFor="razao-social">Razão Social</label>
-            <input type="text" id="razao-social" name="razao-social" />
-          </div>
+          <TextField id="razaoSocial" name="razaoSocial" variant="filled" fullWidth margin="normal"/>
+          <TextField id="cnpj" label="CNPJ" variant="filled" fullWidth />
           <div className="form-group gender">
             <label>Atende:</label>
             <input type="checkbox" id="masculino" name="gender" value="masculino" />
@@ -89,10 +90,10 @@ const CadastroProfissional= () => {
             <textarea id="descricao" name="descricao"></textarea>
           </div>
           <div className="form-group">
-            <button type="submit">Próximo</button>
+            <button type="submit">Salvar</button>
           </div>
         </div>
-      </div>
+      </from>
     </div>
   );
 };

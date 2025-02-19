@@ -65,7 +65,6 @@ body {
 
 #top-bar1 {
   display: flex;
-  color: #E0E2E8;
   justify-content: space-between;
   margin-bottom: 10px;
 }
@@ -76,7 +75,6 @@ body {
 
 #top-bar2 {
   display: flex;
-  color: #E0E2E8;
   background-color: #E0E2E8;
   padding: 10px;
   justify-content: space-between;

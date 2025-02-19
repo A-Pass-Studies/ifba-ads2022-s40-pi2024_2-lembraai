@@ -20,7 +20,7 @@ const Estabelecimento = () => {
           Ao cadastrar um novo estabelecimento, você se tornará o administrador do estabelecimento e poderá aceitar novos associados
         </p>
         <div className="opcoes">
-          <Link href="/ui/">Cadastre um estabelecimento</Link>
+          <Link href="/ui/cadastroestabelecimento">Cadastre um estabelecimento</Link>
         </div>
       </div>
       <div className="caixaregistro">
@@ -33,7 +33,7 @@ const Estabelecimento = () => {
         <br />
         <br />
         <div className="opcoes">
-          <button type="submit">Associe-se com um estabelecimento</button>
+          <Link href="/ui/cadastroestabelecimento">Associe-se com um estabelecimento</Link>
         </div>
         <br />
         <p className="obs">Essas configurações poderão ser alteradas posteriormente na tela de configurações de perfil do usuário.</p>

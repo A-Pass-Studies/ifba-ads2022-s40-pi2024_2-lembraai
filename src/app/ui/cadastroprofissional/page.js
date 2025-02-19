@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Link } from "next/link";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function CadastroProfissional() {
@@ -22,7 +22,7 @@ export default function CadastroProfissional() {
 
     localStorage.setItem('cadastro-profissional', JSON.stringify(dados));
 
-    router.push('/ui/registroestabelecimento');
+    router.push(e.target.action);
   }
 
   return (
@@ -51,7 +51,7 @@ export default function CadastroProfissional() {
 
       {/* Formulário */}
       <div className="form-container">
-        <form action="/ui/cadastro-profissional" onSubmit={handlerSubmit}>
+        <form action="/ui/registroestabelecimento" onSubmit={handlerSubmit}>
           <input className="input" type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
           <br />
 
