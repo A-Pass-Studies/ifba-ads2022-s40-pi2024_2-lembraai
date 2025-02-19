@@ -20,7 +20,8 @@ export default (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Logradouros',
     schema: 'enderecos',
-    tableName: 'logradouros'
+    tableName: 'logradouros',
+    timestamps: false
   });
   return Logradouros;
 };

@@ -1,11 +1,18 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
+import dayjs from 'dayjs';
 import { useRouter } from "next/navigation";
+import NavHeader from "@/components/NavHeader";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { ptBR } from "@mui/x-date-pickers/locales";
+
+dayjs.locale(ptBR)
 
 export default function CadastroProfissional() {
-
   const router = useRouter();
 
   const handlerSubmit = (e) => {
@@ -13,10 +20,10 @@ export default function CadastroProfissional() {
 
     const fdata = new FormData(e.target);
 
-    const dados = {      
+    const dados = {
     }
 
-    fdata.forEach((value, key)=> {
+    fdata.forEach((value, key) => {
       dados[key] = value;
     });
 
@@ -26,64 +33,57 @@ export default function CadastroProfissional() {
   }
 
   return (
-    <div>
-      {/* Top Bar */}
-      <div id="top-bar1">
-        <div className="imgseta">
-          <Link href="/ui/registrogeral">
-            <img src="/arrow-back-icon.svg" alt="Voltar" width={24} height={24} />
-          </Link>
+    <Box>
+      <NavHeader />
+
+      <Container>
+        {/* Cadastro */}
+        <Typography variant="h4" component="h1" marginBottom="24px">Cadastro Profissional</Typography>
+
+        <div className="imgcadastro">
+          <img src="/ic_profissional 1.png" alt="Ícone Profissional" />
         </div>
-      </div>
 
-      {/* Cadastro */}
-      <h2>Cadastro Profissional</h2>
-
-      <div className="imgcadastro">
-        <img src="/ic_profissional 1.png" alt="Ícone Profissional" />
-      </div>
-
-      {/* Botões de Login */}
-      <div className="botão-entrar-com">
-        <button className="bec">Entre com Google</button>
-        <button className="bec">Entre com ICloud</button>
-      </div>
-
-      {/* Formulário */}
-      <div className="form-container">
+        {/* Formulário */}
         <form action="/ui/registroestabelecimento" onSubmit={handlerSubmit}>
-          <input className="input" type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
-          <br />
+          <Stack spacing={2}>
+            <TextField variant="filled" type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
 
-          <input className="input" type="text" id="cpf" name="cpf" placeholder="CPF" required="required"/>
+            <TextField variant="filled" type="text" id="cpf" name="cpf" placeholder="CPF" required="required" />
+            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="pt-br">
+              <MobileDatePicker name="nascimento" defaultValue={dayjs()} format="DD/MM/YYYY" slotProps={{
+          textField: {
+            variant: "filled", // Define o estilo "Filled"
+            fullWidth: true, // Faz o input ocupar toda a largura
+          },
+        }} />
+            </LocalizationProvider>
 
-          <input className="input" type="date" id="data" name="nascimento" placeholder="Digite sua data de nascimento" required />
-          <br />
+            {/* Gênero */}
+            <div className="genero">
+              <input type="radio" id="masculino" name="sexo" value="M" required />
+              <label htmlFor="masculino" className="btn">Masculino</label>
 
-          {/* Gênero */}
-          <div className="genero">
-            <input type="radio" id="masculino" name="sexo" value="M" required />
-            <label htmlFor="masculino" className="btn">Masculino</label>
+              <input type="radio" id="feminino" name="sexo" value="F" />
+              <label htmlFor="feminino" className="btn">Feminino</label>
+            </div>
+            <br />
 
-            <input type="radio" id="feminino" name="sexo" value="F" />
-            <label htmlFor="feminino" className="btn">Feminino</label>
-          </div>
-          <br />
+            <TextField variant="filled" type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
+            <br />
 
-          <input className="input" type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
-          <br />
+            <TextField variant="filled" type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
+            <br />
 
-          <input className="input" type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
-          <br />
+            <TextField variant="filled" type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua senha" required />
+            <br />
 
-          <input className="input" type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua senha" required />
-          <br />
-
-          <div className="botãoCadas">
-            <button className="bt-cadastro" type="submit">Cadastrar</button>
-          </div>
+            <Button variant="contained" type="submit">
+              Cadastrar
+            </Button>
+          </Stack>
         </form>
-      </div>
-    </div>
+      </Container>
+    </Box>
   );
 }

@@ -1,14 +1,20 @@
-import { Box } from '@mui/material';
+'use client';
+
+import { Box, IconButton } from '@mui/material';
 import { blueGrey } from '@mui/material/colors';
+import { useRouter } from "next/navigation";
+import { ArrowBack } from "@mui/icons-material";
 
 export default function NavHeader() {
+      const router = useRouter();
+
     const bg = blueGrey['100'];
     return (
         <Box className="navHeader" bgcolor={bg} padding="8px" marginBottom="10px">
             <div className=".arrow-back-action-container">
-            <a href="/ui/login.html">
-                <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
-            </a>
+            <IconButton onClick={() => router.back()}>
+                <ArrowBack/>
+            </IconButton>
             </div>
         </Box>        
     );

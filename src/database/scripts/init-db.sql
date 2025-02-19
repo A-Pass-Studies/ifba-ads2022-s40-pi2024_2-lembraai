@@ -90,7 +90,7 @@ create table if not exists enderecos.logradouros (
 
 create schema if not exists dadoscadastrais;
 
-create table if not exists dadoscadastrais.enderecos (
+create table if not exists enderecos.enderecos (
 	id bigserial not null primary key,
 	logradouro_id integer not null,
 	numero integer not null, 
@@ -115,7 +115,7 @@ create table if not exists dadoscadastrais.pessoas (
 	
 	constraint pessoas_cpf_uq unique (cpf),
 	constraint pessoas_usuario_fk foreign key (id) references auth.usuarios(id),
-	constraint pessoas_endereco_fk foreign key (endereco_id) references dadoscadastrais.enderecos(id)
+	constraint pessoas_endereco_fk foreign key (endereco_id) references enderecos.enderecos(id)
 );
 
 create trigger on_update_dadoscadastrais_pessoas_current_timestamp before
@@ -129,6 +129,7 @@ create table dadoscadastrais.pessoas_juridicas (
 	razao_social varchar(128) not null,
 	cnpj char(14) not null,
 	
+	constraint pessoas_juridicas_pessoa_id_fk foreign key (pessoa_id) references dadoscadastrais.pessoas(id),
 	constraint pessoas_juridicas_razao_social_uq unique (razao_social),
 	constraint pessoas_juridicas_cnpj_uq unique (cnpj)
 );
@@ -143,13 +144,13 @@ create table if not exists servicos.estabelecimentos (
 	nome_comercial varchar(128) not null,
 	endereco_id bigint not null,
 	atende_masculino boolean not null,
-	atende_feminio boolean not null,
+	atende_feminino boolean not null,
 	criado_em timestamp default current_timestamp,
 	atualizado_em timestamp default current_timestamp,
 	pessoa_registrou_id bigint not null,
 	excluido_em timestamp null default null,
 
-	constraint estabelecimentos_endereco_fk foreign key (endereco_id) references dadoscadastrais.enderecos(id),
+	constraint estabelecimentos_endereco_fk foreign key (endereco_id) references enderecos.enderecos(id),
 	constraint estabelecimentos_pessoa_registrou_fk foreign key (pessoa_registrou_id) references dadoscadastrais.pessoas(id)
 );
 

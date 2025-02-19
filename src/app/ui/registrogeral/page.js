@@ -2,29 +2,31 @@
 
 import React from "react";
 import Link from "next/link";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import NavHeader from "@/components/NavHeader";
 
 export default function Registrogeral() {
   return (
-    <div>
-      {/* Top Bar */}
-      <div id="top-bar">
-        <Link href="/ui/auth">
-          <img src="/arrow-back-icon.svg" alt="Voltar para login" width={48} height={48} />
-        </Link>
-      </div>
+    <Box >
+      <NavHeader />
+      <Container >
+        {/* Registro */}
+        <Stack spacing={2}>
+          <Typography variant="h4" component="h1">Como você deseja se registrar?</Typography>
 
-      {/* Registro */}
-      <div id="registro">
-        <p>Como você deseja se registrar?</p>
+          <Link href="/ui/cadastrocliente">
+            <img src="/registro-cliente.png" alt="Cadastro Cliente" width="100%" style={
+              {objectFit: "cover"}
+            }/>
+          </Link>
 
-        <Link href="/ui/cadastrocliente">
-          <img src="/registro-cliente.png" alt="Cadastro Cliente" />
-        </Link>
-
-        <Link href="/ui/cadastroprofissional">
-          <img src="/registro-profissional.png" alt="Cadastro Profissional" />
-        </Link>
-      </div>
-    </div>
+          <Link href="/ui/cadastroprofissional">
+            <img src="/registro-profissional.png" alt="Cadastro Profissional" width="100%" style={
+              {objectFit: "cover"}
+            }/>
+          </Link>
+        </Stack>
+      </Container>
+    </Box>
   );
 }

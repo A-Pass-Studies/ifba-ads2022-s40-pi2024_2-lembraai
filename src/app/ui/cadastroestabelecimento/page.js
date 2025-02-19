@@ -1,32 +1,80 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { useRouter  } from "next/navigation";
 import './style.css';
-import { Box, Checkbox, FormControl, FormGroup, FormLabel, FormControlLabel, InputLabel, Select, MenuItem, TextField, Container, Typography } from '@mui/material';
+import { Box, Checkbox, FormControl, FormGroup, FormLabel, FormControlLabel, InputLabel, Select, MenuItem, TextField, Container, Typography, Button } from '@mui/material';
 import NavHeader from '@/components/NavHeader';
 import UploadProfileImage from '@/components/UploadProfileImage';
+import { Save } from '@mui/icons-material';
 
-const CadastroProfissional = () => {
+
+export default function CadastroProfissional() {
+  const router = useRouter();
+
+  /**
+   * @type {Object}
+   */
+  const [savedData, setSavedData] = useState(null);
+
+  useEffect(() => {
+    try {
+      setSavedData(JSON.parse(localStorage.getItem('cadastro-profissional')));
+    } catch(error) {
+      router.push('/ui/auth')
+    }
+  }, []);
+
+  async function onSubmitHandler(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    /**
+     * 
+     */
+    console.log(savedData);
+
+    if(!!savedData) {
+      Object.keys(savedData).forEach((k) => data.append(k, savedData[k]));
+    }
+
+    const res = await fetch(event.target.action, {
+      method: event.target.method.toUpperCase(),
+      body: data,
+    });
+
+    if (res.ok) {
+      document.cookie = `auth-token=Bearer ${await res.text()}`;
+
+      router.push('/ui/telaprincipal');
+    } else {
+      alert('Falha no cadastro!');
+    }
+  }
+
   return (
     <Box>
       <NavHeader />
       <Container maxWidth="lg">
         <Typography variant="h5" component="h1" marginBottom="48px">Cadastro Estabelecimento</Typography>
-        <form>
+        <form action="/api/auth/signup-profissional" method="POST" onSubmit={onSubmitHandler}>
           <center><UploadProfileImage/></center>
           <TextField name="nomeFantasia" label="Nome Fantasia" variant="filled" required="required" margin="normal" fullWidth/>
           <TextField name="razaoSocial" label="Razão Social" variant="filled" fullWidth margin="normal" />
           <TextField id="cnpj" label="CNPJ" variant="filled" fullWidth margin="normal" />
-          <FormControl component="fieldset" variant="standard" >
+          <FormControl component="fieldset" variant="standard" required="required" >
             <FormLabel component="legend">Atende:</FormLabel>
               <FormGroup sx={{ display: 'inline-block' }}>
                 <FormControlLabel
                 control={
-                  <Checkbox name="atendeMasculino" />
+                  <Checkbox name="atendeMasculino" required="required"/>
                 }
                 label="Masculino"
               />
               <FormControlLabel
               control={
-                <Checkbox name="atendeFeminino" />
+                <Checkbox name="atendeFeminino"/>
               }
               label="Femino"
             />
@@ -34,9 +82,9 @@ const CadastroProfissional = () => {
           </FormControl>
           <TextField name="telefoneOuCelular" label="Telefone/Celular" placeholder="(99) 9 9999-9999" variant="filled" fullWidth margin="normal"/>
           <TextField name="enderecoCep" label="CEP" placeholder="99999-999" variant="filled" fullWidth margin="normal"/>
-          <FormControl fullWidth margin="normal">
+          <FormControl fullWidth margin="normal" required="required">
             <InputLabel id="uf">UF</InputLabel>
-            <Select labelId="uf" label="UF" name="enderecoEstado">
+            <Select labelId="uf" label="UF" name="enderecoEstado" required="required">
               <MenuItem value="">Selecione um estado</MenuItem>
               <MenuItem value="AC">Acre</MenuItem>
               <MenuItem value="AL">Alagoas</MenuItem>
@@ -67,30 +115,17 @@ const CadastroProfissional = () => {
               <MenuItem value="TO">Tocantins</MenuItem>
             </Select>
           </FormControl>
-          <div className="form-group">
-            <label htmlFor="cidade">Cidade</label>
-            <input type="text" id="cidade" name="cidade" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="endereco">Endereço</label>
-            <input type="text" id="endereco" name="endereco" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="numero">Número</label>
-            <input type="text" id="numero" name="numero" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="descricao">Descrição breve</label>
-            <textarea id="descricao" name="descricao"></textarea>
-          </div>
-          <div className="form-group">
-            <button type="submit">Salvar</button>
-          </div>
+          <TextField label="Cidade" name="enderecoCidade" fullWidth variant="filled" margin="normal" required="required"/>
+          <TextField label="Bairro" name="enderecoBairro" fullWidth variant="filled" margin="normal" required="required" />
+          <TextField label="Logradouro" name="enderecoLogradouro" variant="filled" required="required" fullWidth margin="normal"/>
+          <TextField label="Número" name="enderecoNumero" variant="filled" margin="normal" type="number"/>
+          <TextField label="Complemento" name="enderecoComplemento" variant="filled" margin="normal" fullWidth/>
+          <TextField label="Referência" name="enderecoReferencia" variant="filled" margin="normal" fullWidth multiline/>
+          <TextField label="Descrição" name="descricao" variante="filled" margin="normal" multiline rows="4" fullWidth/>
+          
+          <Button type="submit" variant="contained" endIcon={<Save />} fullWidth sx={{marginBottom: "24px", marginTop: "16px"}}>Salvar</Button>
         </form>
       </Container>
     </Box>
   );
-};
-
-export default CadastroProfissional;
-
+}

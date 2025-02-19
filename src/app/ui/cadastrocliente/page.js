@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Form from 'next/form'
 import { useRouter } from "next/navigation";
+import NavHeader from "@/components/NavHeader";
+import { Box, Container } from "@mui/material";
 
 export default function Cadastrocliente() {
   const router = useRouter();
@@ -29,28 +31,15 @@ export default function Cadastrocliente() {
   };
 
   return (
-    <div>
-      {/* Top Bar */}
-      <div id="top-bar1">
-        <div className="imgseta">
-          <Link href="/ui/registrogeral">
-            <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width={24} height={24} />
-          </Link>
-        </div>
-      </div>
+    <Box>
+      <NavHeader />
 
       {/* Cadastro Cliente */}
-      <div>
+      <Container>
         <h2>Cadastro Cliente</h2>
 
         <div className="imgcadastro">
           <img src="/ic_cliente 1.png" alt="Ícone Cliente" />
-        </div>
-
-        {/* Botões de login */}
-        <div className="botão-entrar-com">
-          <button className="bec">Entre com Google</button>
-          <button className="bec">Entre com iCloud</button>
         </div>
 
         {/* Formulário */}
@@ -85,7 +74,7 @@ export default function Cadastrocliente() {
             </div>
           </form>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Box>
   );
 }

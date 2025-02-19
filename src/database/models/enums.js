@@ -26,10 +26,4 @@ export const StatusAgendamento = Object.freeze({
   CANCELADO_CLIENTE: 'CANCELADO_CLIENTE', CANCELADO_PROFISSIONAL: 'CANCELADO_PROFISSIONAL', RECUSADO: 'RECUSADO'
 });
 
-// enums/index.js
-import { Uf } from './Uf';
-import { TipoLogradouro } from './TipoLogradouro';
-import { Sexo } from './Sexo';
-import { StatusAgendamento } from './StatusAgendamento';
-
 export default { Uf, TipoLogradouro, Sexo, StatusAgendamento };

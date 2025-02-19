@@ -18,7 +18,7 @@ export default (sequelize, DataTypes) => {
     nome_comercial: DataTypes.STRING,
     endereco_id: DataTypes.INTEGER,
     atende_masculino: DataTypes.BOOLEAN,
-    atende_feminio: DataTypes.BOOLEAN,
+    atende_feminino: DataTypes.BOOLEAN,
     criado_em: DataTypes.DATE,
     atualizado_em: DataTypes.DATE,
     pessoa_registrou_id: DataTypes.INTEGER,

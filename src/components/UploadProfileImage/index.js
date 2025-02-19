@@ -37,9 +37,7 @@ export default function UploadProfileImage({ inputName, actionImageSrc, alt }) {
                     <CloudUpload fontSize="large" />
                     <VisuallyHiddenInput
                         type="file"
-                        onChange={onUploaded}
-                        multiple
-                    />
+                        onChange={onUploaded} name="logoEstabelecimento"/>
                 </IconButton>
             </center>
         </Box>

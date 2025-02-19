@@ -5,7 +5,8 @@ import React from "react"
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
+import { Container, TextField, Button, Stack, Box } from "@mui/material";
+import { Login } from "@mui/icons-material";
 export default function AuthPage() {
   const router = useRouter();
 
@@ -31,27 +32,31 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="bodyLogin">
-      <Image
-        src="/lembraai-logo.png"
-        alt="logo"
-        className="login-logo"
-        width={232}
-        height={142}
-      />
+    <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
+      <Container >
+        <center><Image
+          src="/lembraai-logo.png"
+          alt="logo"
+          className="login-logo"
+          width={232}
+          height={142}
+        /></center>
 
-      <form className="login-form" onSubmit={handleSubmit} method="POST">
-        <input type="email" placeholder="E-mail" name="email" required />
+        <form onSubmit={handleSubmit} method="POST">
+          <Stack spacing={2}>
+            <TextField variant="outlined" type="email" placeholder="E-mail" name="email" required margin="normal"/>
 
-        <input type="password" placeholder="Senha" name="senha" required />
+            <TextField variant="outlined" type="password" placeholder="Senha" name="senha" required margin="normal"/>
 
-        <button type="submit">
-          Entrar
-        </button>
+            <Button variant="contained" type="submit" endIcon={<Login/>}>
+              Entrar
+            </Button>
 
-        <Link href="/ui/registrogeral">Não é usuário? Cadastre-se</Link>
-        <Link href="/ui/auth/recovery">Esqueceu sua senha, recupere aqui...</Link>
-      </form>
-    </div>
+            <Button href="/ui/registrogeral">Não é usuário? Cadastre-se</Button>
+            <Button href="/ui/auth/recovery">Esqueceu sua senha, recupere aqui...</Button>
+          </Stack>
+        </form>
+      </Container>
+    </Box>
   )
 }

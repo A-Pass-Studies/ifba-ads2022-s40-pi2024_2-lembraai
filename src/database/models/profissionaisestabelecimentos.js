@@ -12,14 +12,22 @@ export default (sequelize, DataTypes) => {
     }
   }
   ProfissionaisEstabelecimentos.init({
-    pessoa_profissional_id: DataTypes.INTEGER,
-    estabelecimento_id: DataTypes.INTEGER,
+    pessoa_profissional_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
+    estabelecimento_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     dono: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'ProfissionaisEstabelecimentos',
     schema: 'servicos',
     tableName: 'profissionais_estabelecimentos',
+    timestamps:false
   });
+  ProfissionaisEstabelecimentos.removeAttribute('id');
   return ProfissionaisEstabelecimentos;
 };
