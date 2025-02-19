@@ -1,44 +1,49 @@
 import React from 'react';
-import './style.css';
 import Link from 'next/link';
+import { Card, CardActions, CardContent, Typography, Button, Stack, Box, Container } from '@mui/material';
+import './style.css';
+import NavHeader from '@/components/NavHeader';
+import { blueGrey } from '@mui/material/colors';
 
 const Estabelecimento = () => {
+  const cardBg = blueGrey['200'];
   return (
-    <div id="registroEstabelecimento">
-      <div id="top-bar1">
-        <div className="imgseta">
-          <a href="/ui/login.html">
-            <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
-          </a>
-        </div>
-      </div>
-      <h2 className="obs">Dados do estabelecimento</h2>
-      <div className="caixaregistro">
-        <h4>Cadastre um novo!</h4>
-        <p>Opte por cadastrar um novo estabelecimento</p>
-        <p>
-          Ao cadastrar um novo estabelecimento, você se tornará o administrador do estabelecimento e poderá aceitar novos associados
-        </p>
-        <div className="opcoes">
-          <Link href="/ui/cadastroestabelecimento">Cadastre um estabelecimento</Link>
-        </div>
-      </div>
-      <div className="caixaregistro">
-        <h4>Ou associe-se com um existente!</h4>
-        <p>Opte por se tornar um funcionário/sócio</p>
-        <p>
-          Ao optar por associar-se com um estabelecimento existente, uma notificação será enviada para o administrador. Assim que ele
-          o aceitar, você poderá receber novos pedidos
-        </p>
-        <br />
-        <br />
-        <div className="opcoes">
-          <Link href="/ui/cadastroestabelecimento">Associe-se com um estabelecimento</Link>
-        </div>
-        <br />
-        <p className="obs">Essas configurações poderão ser alteradas posteriormente na tela de configurações de perfil do usuário.</p>
-      </div>
-    </div>
+    <Box >
+      <NavHeader/>
+      <Container maxWidth="lg">
+      <Typography variant="h4" component="h1" sx={{ fontSize: "1.8em" }} marginBottom="48px">Dados do estabelecimento</Typography>
+      <Stack spacing={4}>
+        <Card sx={{ backgroundColor: cardBg}}>
+          <CardContent>
+            <Typography variant="h5">Cadastre um novo!</Typography>
+            <Typography variant="subtitle1">Opte por cadastrar um novo estabelecimento.</Typography>
+            <br />
+            <Typography variant="body2" color="textSecondary">
+              Ao cadastrar um novo estabelecimento, você se tornará o administrador do estabelecimento e poderá aceitar novos associados.
+            </Typography>
+          </CardContent>
+          <CardActions className="opcoes">
+            <Button variant="contained" href="/ui/cadastroestabelecimento">Cadastre um estabelecimento</Button>
+          </CardActions>
+        </Card>
+        <Card sx={{ backgroundColor: cardBg}}>
+          <CardContent>
+            <Typography variant="h5">Ou associe-se com um existente!</Typography>
+            <Typography variant="subtitle1">Opte por se tornar um funcionário ou sócio.</Typography>
+            <br />
+            <Typography variant="body2">
+              Ao optar por associar-se com um estabelecimento existente, uma notificação será enviada para o
+              administrador. Assim que eleo aceitar, você poderá receber novos pedidos
+            </Typography>
+          </CardContent>
+          <CardActions className="opcoes">
+            <Button variant="contained" href="/ui/cadastroestabelecimento">Associe-se com um estabelecimento</Button>
+          </CardActions>
+        </Card>
+        <Typography variant="body2" align="center">Essas configurações poderão ser alteradas posteriormente na tela de configurações de perfil do usuário.</Typography>
+      </Stack>
+      </Container>
+    </Box>
   );
 };
 

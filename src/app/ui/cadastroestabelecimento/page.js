@@ -1,78 +1,72 @@
 import React from 'react';
 import './style.css';
-import { TextField } from '@mui/material';
+import { Box, Checkbox, FormControl, FormGroup, FormLabel, FormControlLabel, InputLabel, Select, MenuItem, TextField, Container, Typography } from '@mui/material';
+import NavHeader from '@/components/NavHeader';
+import UploadProfileImage from '@/components/UploadProfileImage';
 
 const CadastroProfissional = () => {
   return (
-    <div id="registroEstabelecimento">
-      <div id="top-bar1">
-        <div className="imgseta">
-          <a href="/ui/login.html">
-            <img src="/arrow-back-icon.svg" alt="arrow-back-icon" width="24" height="24" />
-          </a>
-        </div>
-      </div>
-      <from>
-        <div className="container">
-          <h1>Cadastro Estabelecimento</h1>
-          <div className="logo-upload">
-            <img src="/image (1).png" alt="Logomarca" />
-            <button>Upload</button>
-          </div>
-          <div className="form-group">
-            <label htmlFor="nome-fantasia">Nome Fantasia</label>
-            <input type="text" id="nome-fantasia" name="nome-fantasia" />
-          </div>
-          <TextField id="razaoSocial" name="razaoSocial" variant="filled" fullWidth margin="normal"/>
-          <TextField id="cnpj" label="CNPJ" variant="filled" fullWidth />
-          <div className="form-group gender">
-            <label>Atende:</label>
-            <input type="checkbox" id="masculino" name="gender" value="masculino" />
-            <label htmlFor="masculino">Masculino</label>
-            <input type="checkbox" id="feminino" name="gender" value="feminino" />
-            <label htmlFor="feminino">Feminino</label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="telefone">Telefone/Celular</label>
-            <input type="text" id="telefone" name="telefone" placeholder="(99) 9 9999-9999" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="cep">CEP</label>
-            <input type="text" id="cep" name="cep" placeholder="00000-000" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="estado">Estado</label>
-            <select id="estado" name="estado">
-              <option value="">Selecione um estado</option>
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
-            </select>
-          </div>
+    <Box>
+      <NavHeader />
+      <Container maxWidth="lg">
+        <Typography variant="h5" component="h1" marginBottom="48px">Cadastro Estabelecimento</Typography>
+        <form>
+          <center><UploadProfileImage/></center>
+          <TextField name="nomeFantasia" label="Nome Fantasia" variant="filled" required="required" margin="normal" fullWidth/>
+          <TextField name="razaoSocial" label="Razão Social" variant="filled" fullWidth margin="normal" />
+          <TextField id="cnpj" label="CNPJ" variant="filled" fullWidth margin="normal" />
+          <FormControl component="fieldset" variant="standard" >
+            <FormLabel component="legend">Atende:</FormLabel>
+              <FormGroup sx={{ display: 'inline-block' }}>
+                <FormControlLabel
+                control={
+                  <Checkbox name="atendeMasculino" />
+                }
+                label="Masculino"
+              />
+              <FormControlLabel
+              control={
+                <Checkbox name="atendeFeminino" />
+              }
+              label="Femino"
+            />
+            </FormGroup>
+          </FormControl>
+          <TextField name="telefoneOuCelular" label="Telefone/Celular" placeholder="(99) 9 9999-9999" variant="filled" fullWidth margin="normal"/>
+          <TextField name="enderecoCep" label="CEP" placeholder="99999-999" variant="filled" fullWidth margin="normal"/>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="uf">UF</InputLabel>
+            <Select labelId="uf" label="UF" name="enderecoEstado">
+              <MenuItem value="">Selecione um estado</MenuItem>
+              <MenuItem value="AC">Acre</MenuItem>
+              <MenuItem value="AL">Alagoas</MenuItem>
+              <MenuItem value="AP">Amapá</MenuItem>
+              <MenuItem value="AM">Amazonas</MenuItem>
+              <MenuItem value="BA">Bahia</MenuItem>
+              <MenuItem value="CE">Ceará</MenuItem>
+              <MenuItem value="DF">Distrito Federal</MenuItem>
+              <MenuItem value="ES">Espírito Santo</MenuItem>
+              <MenuItem value="GO">Goiás</MenuItem>
+              <MenuItem value="MA">Maranhão</MenuItem>
+              <MenuItem value="MT">Mato Grosso</MenuItem>
+              <MenuItem value="MS">Mato Grosso do Sul</MenuItem>
+              <MenuItem value="MG">Minas Gerais</MenuItem>
+              <MenuItem value="PA">Pará</MenuItem>
+              <MenuItem value="PB">Paraíba</MenuItem>
+              <MenuItem value="PR">Paraná</MenuItem>
+              <MenuItem value="PE">Pernambuco</MenuItem>
+              <MenuItem value="PI">Piauí</MenuItem>
+              <MenuItem value="RJ">Rio de Janeiro</MenuItem>
+              <MenuItem value="RN">Rio Grande do Norte</MenuItem>
+              <MenuItem value="RS">Rio Grande do Sul</MenuItem>
+              <MenuItem value="RO">Rondônia</MenuItem>
+              <MenuItem value="RR">Roraima</MenuItem>
+              <MenuItem value="SC">Santa Catarina</MenuItem>
+              <MenuItem value="SP">São Paulo</MenuItem>
+              <MenuItem value="SE">Sergipe</MenuItem>
+              <MenuItem value="TO">Tocantins</MenuItem>
+            </Select>
+          </FormControl>
           <div className="form-group">
             <label htmlFor="cidade">Cidade</label>
             <input type="text" id="cidade" name="cidade" />
@@ -92,9 +86,9 @@ const CadastroProfissional = () => {
           <div className="form-group">
             <button type="submit">Salvar</button>
           </div>
-        </div>
-      </from>
-    </div>
+        </form>
+      </Container>
+    </Box>
   );
 };
 
