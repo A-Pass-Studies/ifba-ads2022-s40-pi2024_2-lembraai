@@ -8,10 +8,21 @@ export default (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Enderecos.hasOne(models.Pessoas, {
+        foreignKey: 'endereco_id'
+      });
+
+      Enderecos.hasOne(models.Estabelecimentos, {
+        foreignKey: 'endereco_id'
+      });
     }
   }
   Enderecos.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     logradouro_id: DataTypes.INTEGER,
     numero: DataTypes.INTEGER,
     complemento: DataTypes.STRING,
@@ -19,8 +30,9 @@ export default (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Enderecos',
-    schema: 'dadoscadastrais',
-    tableName: 'enderecos'
+    schema: 'enderecos',
+    tableName: 'enderecos',
+    timestamps: false
   });
   return Enderecos;
 };

@@ -19,7 +19,8 @@ export default (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Cidades',
     schema: 'enderecos',
-    tableName: 'cidades'
+    tableName: 'cidades',
+    timestamps: false
   });
   return Cidades;
 };

@@ -18,7 +18,8 @@ export default (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Bairros',
     schema: 'enderecos',
-    tableName: 'bairros'
+    tableName: 'bairros',
+    timestamps: false,
   });
   return Bairros;
 };

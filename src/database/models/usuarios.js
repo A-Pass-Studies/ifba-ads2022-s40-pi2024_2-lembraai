@@ -1,5 +1,5 @@
 'use strict';
-import { Model } from 'sequelize';
+import { Model, DataType } from 'sequelize';
 export default (sequelize, DataTypes) => {
   class Usuarios extends Model {
     /**
@@ -8,10 +8,17 @@ export default (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Usuarios.hasOne(models.Pessoas, {
+        foreignKey: 'id'
+      })
     }
   }
   Usuarios.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     email: DataTypes.STRING,
     senha: DataTypes.STRING,
     criado_em: DataTypes.DATE,

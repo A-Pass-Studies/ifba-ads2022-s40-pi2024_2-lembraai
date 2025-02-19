@@ -1,24 +1,45 @@
 'use strict';
 import { Model } from 'sequelize';
-export default (sequelize, DataTypes) => {
+
+export default (sequelize, DataTypes, Enderecos)  => {
+  
   class Pessoas extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
-      // define association here
+      Pessoas.belongsTo(models.Usuarios, {
+        foreignKey: 'id',
+        allowNull: false
+      });
+
+      Pessoas.belongsTo(models.Enderecos, {
+        foreignKey: 'endereco_id',
+        allowNull: true
+      });
     }
   }
   Pessoas.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     nome: DataTypes.STRING,
     foto_perfil: DataTypes.STRING,
     cpf: DataTypes.STRING,
     sexo: DataTypes.STRING,
     nascimento: DataTypes.DATE,
-    celular: DataTypes.STRING,
-    pessoa_endereco_id: DataTypes.INTEGER,
+    celular: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    endereco_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: Enderecos,
+        allowNull: true,
+        key: 'id'
+      }
+    },
     criado_em: DataTypes.DATE,
     atualizado_em: DataTypes.DATE
   }, {
