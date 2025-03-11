@@ -23,7 +23,7 @@ export default function HomePage() {
 
       {/* Conteúdo Principal */}
       <div id="index-content">
-        {/* Carrossel */}
+
         <div className="carrousel">
           <img src="masculino.png" alt="Estilo Masculino" />
           <img src="feminino.png" alt="Estilo Feminino" />
