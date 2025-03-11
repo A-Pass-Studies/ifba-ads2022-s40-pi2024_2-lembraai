@@ -17,7 +17,6 @@ function extractData(data) {
     let dtNasc = data.get('nascimento').split('/');
     let dtNassc = new Date(dtNasc[2], dtNasc[1], dtNasc[0]);
 
-
     const pessoa = {
         nome: data.get('nome'),
         nascimento: dtNassc.toISOString().split('T')[0],
