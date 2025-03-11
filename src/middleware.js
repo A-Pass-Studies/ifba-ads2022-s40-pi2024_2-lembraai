@@ -13,34 +13,38 @@ const SECRET_KEY = process.env.TOKEN_SECRET; // Chave secreta no .env
  */
 export function middleware(req) {
   // Excluir rotas específicas da autenticação
-  const publicRoutes = ["/api/auth", "/ui/auth"];
+  const publicRoutes = ["/api/auth", "/ui/auth", "/ui/registro", "/ui/cadastro"];
 
   if (publicRoutes.some((route) => req.nextUrl.pathname.startsWith(route))) {
     return NextResponse.next(); // Permite acesso sem autenticação
-  }
+  } else {
 
-  const useCookie = cookies();
-  const authToken = req.headers.get("Authorization") || useCookie.get('auth-token')?.value;
- 
-  if (!authToken || !authToken.startsWith("Bearer ")) {
-    if (req.nextUrl.pathname.startsWith('/api')) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 }); 
-    } else {
-      return NextResponse.redirect(new URL("/ui/auth", req.url)); // Redireciona para login
+    const useCookie = cookies();
+    let authToken = null;
+    try {
+      authToken = req.headers.get("Authorization") || (useCookie.get('auth-token').value || null);
+    } catch (error) { }
+
+    if (!authToken || !authToken.startsWith("Bearer ")) {
+      if (req.nextUrl.pathname.startsWith('/api')) {
+        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+      } else {
+        return NextResponse.redirect(new URL("/ui/auth", req.url)); // Redireciona para login
+      }
     }
-  }
 
-  const token = authToken.split(" ")[1]; // Obtém o token após "Bearer"
+    const token = authToken.split(" ")[1]; // Obtém o token após "Bearer"
 
-  try {
-    jwtVerify(token, new TextEncoder().encode(SECRET_KEY)); // Verifica o 
-    return NextResponse.next(); // Permite o acesso à rota
-  } catch (error) {
-        if (req.nextUrl.pathname.startsWith('/api')) {
-          return NextResponse.json({ message: "Invalid Token" }, { status: 401 });
-        } else {
-          return NextResponse.redirect(new URL("/ui/auth", req.url)); // Redireciona para login
-        }
+    try {
+      jwtVerify(token, new TextEncoder().encode(SECRET_KEY)); // Verifica o 
+      return NextResponse.next(); // Permite o acesso à rota
+    } catch (error) {
+      if (req.nextUrl.pathname.startsWith('/api')) {
+        return NextResponse.json({ message: "Invalid Token" }, { status: 401 });
+      } else {
+        return NextResponse.redirect(new URL("/ui/auth", req.url)); // Redireciona para login
+      }
+    }
   }
 }
 

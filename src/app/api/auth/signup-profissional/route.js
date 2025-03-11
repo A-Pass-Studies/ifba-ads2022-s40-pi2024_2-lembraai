@@ -14,9 +14,13 @@ const TOKEN_SECRET = process.TOKEN_SECRET;
  * @param {FormData} data 
  */
 function extractData(data) {
+    let dtNasc = data.get('nascimento').split('/');
+    let dtNassc = new Date(dtNasc[2], dtNasc[1], dtNasc[0]);
+
+
     const pessoa = {
         nome: data.get('nome'),
-        nascimento: data.get('nascimento'),
+        nascimento: dtNassc.toISOString().split('T')[0],
         sexo: data.get('sexo'),
         cpf: data.get('cpf'),
         celular: data.get('telefoneOuCelular'),
